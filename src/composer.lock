@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87f39b3db15672ed57a38466e038a356",
+    "content-hash": "56d9a3c4ee9d0bb573413d01992fba94",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1075,16 +1075,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5"
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/17896f6d56a2794a1619e019596ae627aabd8fd5",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/af1ec238659a83e320f03e0e454e200f689b4b97",
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97",
                 "shasum": ""
             },
             "require": {
@@ -1149,7 +1149,7 @@
             "keywords": [
                 "persistence"
             ],
-            "time": "2018-06-14T18:57:48+00:00"
+            "time": "2018-07-12T12:37:50+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -1225,45 +1225,6 @@
                 "reflection"
             ],
             "time": "2018-06-14T14:45:07+00:00"
-        },
-        {
-            "name": "exsyst/swagger",
-            "version": "v0.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GuilhemN/swagger.git",
-                "reference": "a02984db5edacdce2b4e09dae5ba8fe17a0e449e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GuilhemN/swagger/zipball/a02984db5edacdce2b4e09dae5ba8fe17a0e449e",
-                "reference": "a02984db5edacdce2b4e09dae5ba8fe17a0e449e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EXSyst\\Component\\Swagger\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ener-Getick",
-                    "email": "egetick@gmail.com"
-                }
-            ],
-            "description": "A php library to manipulate Swagger specifications",
-            "time": "2018-07-27T06:40:00+00:00"
         },
         {
             "name": "fig/link-util",
@@ -1499,88 +1460,6 @@
             "time": "2017-06-19T01:22:40+00:00"
         },
         {
-            "name": "nelmio/api-doc-bundle",
-            "version": "v3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "2c72aa4efff07862514aaf2cf078fabc58c465d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/2c72aa4efff07862514aaf2cf078fabc58c465d6",
-                "reference": "2c72aa4efff07862514aaf2cf078fabc58c465d6",
-                "shasum": ""
-            },
-            "require": {
-                "exsyst/swagger": "~0.3|~0.4",
-                "php": "^7.0",
-                "phpdocumentor/reflection-docblock": "^3.1|^4.0",
-                "symfony/framework-bundle": "^3.4|^4.0",
-                "symfony/options-resolver": "^3.4.4|^4.0",
-                "symfony/property-info": "^3.4|^4.0",
-                "zircote/swagger-php": "^2.0.9"
-            },
-            "require-dev": {
-                "api-platform/core": "^2.1.0",
-                "doctrine/annotations": "^1.2",
-                "doctrine/common": "^2.4",
-                "friendsofsymfony/rest-bundle": "^2.0",
-                "jms/serializer-bundle": "^2.0",
-                "sensio/framework-extra-bundle": "^3.0",
-                "symfony/asset": "^3.4|^4.0",
-                "symfony/browser-kit": "^3.4|^4.0",
-                "symfony/cache": "^3.4|^4.0",
-                "symfony/config": "^3.4|^4.0",
-                "symfony/console": "^3.4|^4.0",
-                "symfony/dom-crawler": "^3.4|^4.0",
-                "symfony/form": "^3.4|^4.0",
-                "symfony/phpunit-bridge": "^3.4",
-                "symfony/property-access": "^3.4|^4.0",
-                "symfony/stopwatch": "^3.4|^4.0",
-                "symfony/templating": "^3.4|^4.0",
-                "symfony/twig-bundle": "^3.4|^4.0",
-                "symfony/validator": "^3.4|^4.0"
-            },
-            "suggest": {
-                "api-platform/core": "For using an API oriented framework.",
-                "friendsofsymfony/rest-bundle": "For using the parameters annotations."
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nelmio\\ApiDocBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelmio",
-                    "homepage": "http://nelm.io"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/nelmio/NelmioApiDocBundle/contributors"
-                }
-            ],
-            "description": "Generates documentation for your REST API from annotations",
-            "keywords": [
-                "api",
-                "doc",
-                "documentation",
-                "rest"
-            ],
-            "time": "2018-04-27T17:36:50+00:00"
-        },
-        {
             "name": "ocramius/package-versions",
             "version": "1.3.0",
             "source": {
@@ -1742,158 +1621,6 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
-        },
-        {
-            "name": "phpdocumentor/reflection-common",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
-                "reference": "21bdeb5f65d7ebf9f43b1b25d404f87deab5bfb6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/21bdeb5f65d7ebf9f43b1b25d404f87deab5bfb6",
-                "reference": "21bdeb5f65d7ebf9f43b1b25d404f87deab5bfb6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "phpDocumentor\\Reflection\\": [
-                        "src"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jaap van Otterdijk",
-                    "email": "opensource@ijaap.nl"
-                }
-            ],
-            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
-            "homepage": "http://www.phpdoc.org",
-            "keywords": [
-                "FQSEN",
-                "phpDocumentor",
-                "phpdoc",
-                "reflection",
-                "static analysis"
-            ],
-            "time": "2017-09-11T18:02:19+00:00"
-        },
-        {
-            "name": "phpdocumentor/reflection-docblock",
-            "version": "4.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0",
-                "phpdocumentor/reflection-common": "^1.0.0",
-                "phpdocumentor/type-resolver": "^0.4.0",
-                "webmozart/assert": "^1.0"
-            },
-            "require-dev": {
-                "doctrine/instantiator": "~1.0.5",
-                "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "phpDocumentor\\Reflection\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mike van Riel",
-                    "email": "me@mikevanriel.com"
-                }
-            ],
-            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-30T07:14:17+00:00"
-        },
-        {
-            "name": "phpdocumentor/type-resolver",
-            "version": "0.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/9c977708995954784726e25d0cd1dddf4e65b0f7",
-                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 || ^7.0",
-                "phpdocumentor/reflection-common": "^1.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^5.2||^4.8.24"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "phpDocumentor\\Reflection\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mike van Riel",
-                    "email": "me@mikevanriel.com"
-                }
-            ],
-            "time": "2017-07-14T14:27:02+00:00"
         },
         {
             "name": "psr/cache",
@@ -2188,16 +1915,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "50e8b7292425957b8fd66887504430c89bcbd83c"
+                "reference": "535b56b7b0325e87b15b9c57bd3631ae2a0b9f16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/50e8b7292425957b8fd66887504430c89bcbd83c",
-                "reference": "50e8b7292425957b8fd66887504430c89bcbd83c",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/535b56b7b0325e87b15b9c57bd3631ae2a0b9f16",
+                "reference": "535b56b7b0325e87b15b9c57bd3631ae2a0b9f16",
                 "shasum": ""
             },
             "require": {
@@ -2255,7 +1982,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2018-05-12T09:37:42+00:00"
+            "time": "2018-09-30T05:16:57+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -2878,20 +2605,20 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.14",
+            "version": "v3.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "f50e17fa4edd6216f7fe5b908f04e64ba1d19a9e"
+                "reference": "de239d25e0bb3be451a17b627705a5970c6c59e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/f50e17fa4edd6216f7fe5b908f04e64ba1d19a9e",
-                "reference": "f50e17fa4edd6216f7fe5b908f04e64ba1d19a9e",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/de239d25e0bb3be451a17b627705a5970c6c59e6",
+                "reference": "de239d25e0bb3be451a17b627705a5970c6c59e6",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4@stable",
+                "doctrine/common": "~2.4",
                 "ext-xml": "*",
                 "fig/link-util": "^1.0",
                 "php": "^5.5.9|>=7.0.8",
@@ -2979,7 +2706,7 @@
                 "doctrine/data-fixtures": "1.0.*",
                 "doctrine/dbal": "~2.4",
                 "doctrine/doctrine-bundle": "~1.4",
-                "doctrine/orm": "~2.4,>=2.4.5,<=2.7.0",
+                "doctrine/orm": "~2.4,>=2.4.5",
                 "egulias/email-validator": "~1.2,>=1.2.8|~2.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
@@ -3029,7 +2756,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-08-01T14:48:04+00:00"
+            "time": "2018-10-03T12:03:55+00:00"
         },
         {
             "name": "twig/twig",
@@ -3097,56 +2824,6 @@
                 "templating"
             ],
             "time": "2018-07-13T07:18:09+00:00"
-        },
-        {
-            "name": "webmozart/assert",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
-                "reference": "0df1908962e7a3071564e857d86874dad1ef204a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/0df1908962e7a3071564e857d86874dad1ef204a",
-                "reference": "0df1908962e7a3071564e857d86874dad1ef204a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.6",
-                "sebastian/version": "^1.0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                }
-            ],
-            "description": "Assertions to validate method input/output with nice error messages.",
-            "keywords": [
-                "assert",
-                "check",
-                "validate"
-            ],
-            "time": "2018-01-29T19:49:41+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -3254,529 +2931,9 @@
                 "zf2"
             ],
             "time": "2018-04-25T15:33:34+00:00"
-        },
-        {
-            "name": "zircote/swagger-php",
-            "version": "2.0.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "8b42fdc3d8c5a5e0d1f8d344aa359822c9f085e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/8b42fdc3d8c5a5e0d1f8d344aa359822c9f085e0",
-                "reference": "8b42fdc3d8c5a5e0d1f8d344aa359822c9f085e0",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "*",
-                "php": ">=5.6",
-                "symfony/finder": ">=2.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=4.8.35 <=5.6",
-                "squizlabs/php_codesniffer": ">=2.7",
-                "zendframework/zend-form": "<2.8"
-            },
-            "bin": [
-                "bin/swagger"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Swagger\\": "src"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache2"
-            ],
-            "authors": [
-                {
-                    "name": "Robert Allen",
-                    "email": "zircote@gmail.com",
-                    "homepage": "http://www.zircote.com"
-                },
-                {
-                    "name": "Bob Fanger",
-                    "email": "bfanger@gmail.com",
-                    "homepage": "http://bfanger.nl"
-                }
-            ],
-            "description": "Swagger-PHP - Generate interactive documentation for your RESTful API using phpdoc annotations",
-            "homepage": "https://github.com/zircote/swagger-php/",
-            "keywords": [
-                "api",
-                "json",
-                "rest",
-                "service discovery"
-            ],
-            "time": "2017-12-01T09:22:05+00:00"
         }
     ],
     "packages-dev": [
-        {
-            "name": "composer/composer",
-            "version": "1.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/composer.git",
-                "reference": "576aab9b5abb2ed11a1c52353a759363216a4ad2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/576aab9b5abb2ed11a1c52353a759363216a4ad2",
-                "reference": "576aab9b5abb2ed11a1c52353a759363216a4ad2",
-                "shasum": ""
-            },
-            "require": {
-                "composer/ca-bundle": "^1.0",
-                "composer/semver": "^1.0",
-                "composer/spdx-licenses": "^1.2",
-                "composer/xdebug-handler": "^1.1",
-                "justinrainbow/json-schema": "^3.0 || ^4.0 || ^5.0",
-                "php": "^5.3.2 || ^7.0",
-                "psr/log": "^1.0",
-                "seld/jsonlint": "^1.4",
-                "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0"
-            },
-            "conflict": {
-                "symfony/console": "2.8.38"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
-            },
-            "suggest": {
-                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
-                "ext-zip": "Enabling the zip extension allows you to unzip archives",
-                "ext-zlib": "Allow gzip compression of HTTP requests"
-            },
-            "bin": [
-                "bin/composer"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\": "src/Composer"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
-            "homepage": "https://getcomposer.org/",
-            "keywords": [
-                "autoload",
-                "dependency",
-                "package"
-            ],
-            "time": "2018-08-16T14:57:12+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "1.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/c7cb9a2095a074d131b65a8a0cd294479d785573",
-                "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "time": "2016-08-30T16:08:34+00:00"
-        },
-        {
-            "name": "composer/spdx-licenses",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "cb17687e9f936acd7e7245ad3890f953770dec1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/cb17687e9f936acd7e7245ad3890f953770dec1b",
-                "reference": "cb17687e9f936acd7e7245ad3890f953770dec1b",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Spdx\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "SPDX licenses list and validation library.",
-            "keywords": [
-                "license",
-                "spdx",
-                "validator"
-            ],
-            "time": "2018-04-30T10:33:04+00:00"
-        },
-        {
-            "name": "composer/xdebug-handler",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "e1809da56ce1bd1b547a752936817341ac244d8e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/e1809da56ce1bd1b547a752936817341ac244d8e",
-                "reference": "e1809da56ce1bd1b547a752936817341ac244d8e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0",
-                "psr/log": "^1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Composer\\XdebugHandler\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "John Stevenson",
-                    "email": "john-stevenson@blueyonder.co.uk"
-                }
-            ],
-            "description": "Restarts a process without xdebug.",
-            "keywords": [
-                "Xdebug",
-                "performance"
-            ],
-            "time": "2018-08-16T10:54:23+00:00"
-        },
-        {
-            "name": "harmbandstra/swagger-ui-bundle",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/harmbandstra/swagger-ui-bundle.git",
-                "reference": "49f1212b1f69a5d264d0c26704189fac64a445d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/harmbandstra/swagger-ui-bundle/zipball/49f1212b1f69a5d264d0c26704189fac64a445d2",
-                "reference": "49f1212b1f69a5d264d0c26704189fac64a445d2",
-                "shasum": ""
-            },
-            "require": {
-                "composer/composer": "^1.0",
-                "php": ">=7.0",
-                "swagger-api/swagger-ui": "^3.3|~4.0",
-                "symfony/framework-bundle": "~3.3|~4.0",
-                "symfony/http-kernel": "~3.3|~4.0",
-                "symfony/yaml": "~3.3|~4.0"
-            },
-            "require-dev": {
-                "symfony/browser-kit": "~3.3|~4.0",
-                "symfony/phpunit-bridge": "~3.3|~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "HarmBandstra\\SwaggerUiBundle\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                "src"
-            ],
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Exposes swagger UI inside your Symfony project through a route (eg. /docs)",
-            "homepage": "https://github.com/harmbandstra/swagger-ui-bundle",
-            "keywords": [
-                "api",
-                "bundle",
-                "doc",
-                "php",
-                "swagger",
-                "swagger-ui",
-                "symfony"
-            ],
-            "time": "2018-07-09T20:25:14+00:00"
-        },
-        {
-            "name": "justinrainbow/json-schema",
-            "version": "5.2.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8560d4314577199ba51bf2032f02cd1315587c23",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.1",
-                "json-schema/json-schema-test-suite": "1.2.0",
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "bin": [
-                "bin/validate-json"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JsonSchema\\": "src/JsonSchema/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bruno Prieto Reis",
-                    "email": "bruno.p.reis@gmail.com"
-                },
-                {
-                    "name": "Justin Rainbow",
-                    "email": "justin.rainbow@gmail.com"
-                },
-                {
-                    "name": "Igor Wiedler",
-                    "email": "igor@wiedler.ch"
-                },
-                {
-                    "name": "Robert Schönthal",
-                    "email": "seroscho@googlemail.com"
-                }
-            ],
-            "description": "A library to validate a json schema.",
-            "homepage": "https://github.com/justinrainbow/json-schema",
-            "keywords": [
-                "json",
-                "schema"
-            ],
-            "time": "2018-02-14T22:26:30+00:00"
-        },
-        {
-            "name": "seld/jsonlint",
-            "version": "1.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
-                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
-            },
-            "bin": [
-                "bin/jsonlint"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Seld\\JsonLint\\": "src/Seld/JsonLint/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "JSON Linter",
-            "keywords": [
-                "json",
-                "linter",
-                "parser",
-                "validator"
-            ],
-            "time": "2018-01-24T12:46:19+00:00"
-        },
-        {
-            "name": "seld/phar-utils",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/phar-utils.git",
-                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/7009b5139491975ef6486545a39f3e6dad5ac30a",
-                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Seld\\PharUtils\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be"
-                }
-            ],
-            "description": "PHAR file format utilities, for when PHP phars you up",
-            "keywords": [
-                "phra"
-            ],
-            "time": "2015-10-13T18:44:15+00:00"
-        },
         {
             "name": "sensio/generator-bundle",
             "version": "v3.1.7",
@@ -3832,74 +2989,17 @@
             "time": "2017-12-07T15:36:41+00:00"
         },
         {
-            "name": "swagger-api/swagger-ui",
-            "version": "v3.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "6ba514583db6bf8a7ffca04d0e9ce77e7e94b734"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/6ba514583db6bf8a7ffca04d0e9ce77e7e94b734",
-                "reference": "6ba514583db6bf8a7ffca04d0e9ce77e7e94b734",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Anna Bodnia",
-                    "email": "anna.bodnia@gmail.com"
-                },
-                {
-                    "name": "Buu Nguyen",
-                    "email": "buunguyen@gmail.com"
-                },
-                {
-                    "name": "Josh Ponelat",
-                    "email": "jponelat@gmail.com"
-                },
-                {
-                    "name": "Kyle Shockey",
-                    "email": "kyleshockey1@gmail.com"
-                },
-                {
-                    "name": "Robert Barnwell",
-                    "email": "robert@robertismy.name"
-                },
-                {
-                    "name": "Sahar Jafari",
-                    "email": "shr.jafari@gmail.com"
-                }
-            ],
-            "description": " Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.",
-            "homepage": "http://swagger.io",
-            "keywords": [
-                "api",
-                "documentation",
-                "openapi",
-                "specification",
-                "swagger",
-                "ui"
-            ],
-            "time": "2018-08-11T05:59:08+00:00"
-        },
-        {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.4.14",
+            "version": "v3.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "4519412e6b503e3ca4ef43fb6a92b75fb5667824"
+                "reference": "76e013a98031356604e5a730c9eb22713dc4dda4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/4519412e6b503e3ca4ef43fb6a92b75fb5667824",
-                "reference": "4519412e6b503e3ca4ef43fb6a92b75fb5667824",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/76e013a98031356604e5a730c9eb22713dc4dda4",
+                "reference": "76e013a98031356604e5a730c9eb22713dc4dda4",
                 "shasum": ""
             },
             "require": {
@@ -3952,7 +3052,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:19:56+00:00"
+            "time": "2018-10-02T12:28:39+00:00"
         }
     ],
     "aliases": [],

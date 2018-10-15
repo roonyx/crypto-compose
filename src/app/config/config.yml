@@ -70,9 +70,3 @@ sensio_framework_extra:
    router:
         annotations: false
 
-#hb_swagger_ui:
-#    directory: "%kernel.root_dir%/../docs/"
-#    files:
-#    - "/_swagger/swagger.json"
-#    - "my_swagger_spec.yml"
-#    - "my_other_swagger_spec.json"

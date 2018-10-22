@@ -28,6 +28,11 @@ class Log
      */
     private $coinsOfLog;
 
+    /**
+     * Many Logs have Many Links.
+     * @ORM\ManyToMany(targetEntity="Link", mappedBy="logs")
+     */
+    private $links;
 
     /**
      * @var string
@@ -39,6 +44,7 @@ class Log
     public function __construct()
     {
         $this->coinsOfLog = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -78,5 +84,25 @@ class Log
         $this->coinsOfLog->removeElement($coin);
         // not needed for persistence, just keeping both sides in sync
         $coin->removeLoggedRate($this);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * @param Link $link
+     *
+     * @return Log
+     */
+    public function addLink($link)
+    {
+        $this->links[] = $link;
+
+        return $this;
     }
 }

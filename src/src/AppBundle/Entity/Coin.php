@@ -28,11 +28,27 @@ class Coin
      */
     private $loggedRates;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="created_at", type="datetime", length=100)
+     */
+    private $createdAt;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="updated_at", type="datetime", length=100)
+     */
+    private $updatedAt;
 
 
     public function __construct()
     {
         $this->loggedRates = new ArrayCollection();
+        $this->updatedAt = new \DateTime();
+        $this->createdAt = new \DateTime();
     }
 
 

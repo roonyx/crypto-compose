@@ -35,6 +35,7 @@ class LogCoinRate
 
 
     /**
+     * Currency rate per USD
      * @ORM\Column(type="string")
      */
     private $rate;

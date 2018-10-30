@@ -24,9 +24,22 @@ class Coin
 
 
     /**
-     * @ORM\OneToMany(targetEntity="LogCoinRate", mappedBy="coin", fetch="EXTRA_LAZY")
+     * @ORM\OneToMany(targetEntity="LogCoinRate", mappedBy="coin", fetch="EXTRA_LAZY", orphanRemoval=true, cascade={"persist"})
      */
     private $loggedRates;
+
+    /**
+     * Coin name
+     * @ORM\Column(type="string", length=50)
+     */
+    private $name;
+
+    /**
+     * Coin short name
+     * @ORM\Column(type="string", length=10)
+     */
+    private $shortName;
+
 
     /**
      * @var string
@@ -53,6 +66,83 @@ class Coin
 
 
     /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return Coin
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     * @return Coin
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Coin
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * @param mixed $shortName
+     * @return Coin
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+
+    /**
      * Get id.
      *
      * @return int
@@ -71,22 +161,22 @@ class Coin
         return $this->loggedRates;
     }
 
-    public function addLoggedRate(Log $log)
+    public function addLoggedRate(LogCoinRate $logCoinRate)
     {
-        if ($this->loggedRates->contains($log)) {
+        if ($this->loggedRates->contains($logCoinRate)) {
             return;
         }
-        $this->loggedRates[] = $log;
-        $log->addCoinsOfLog($this);
+        $this->loggedRates[] = $logCoinRate;
+        $logCoinRate->setCoin($this);
     }
 
-    public function removeLoggedRate(Log $log)
+    public function removeLoggedRate(LogCoinRate $logCoinRate)
     {
-        if (!$this->loggedRates->contains($log)) {
+        if (!$this->loggedRates->contains($logCoinRate)) {
             return;
         }
-        $this->loggedRates->removeElement($log);
-        $log->removeCoinsOfLog($this);
+        $this->loggedRates->removeElement($logCoinRate);
+        $logCoinRate->setCoin(null);
     }
 
 }

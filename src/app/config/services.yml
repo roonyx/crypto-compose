@@ -9,6 +9,11 @@ services:
         arguments: ['@service_container']
         public: true
 
+    dataHandler:
+        class: AppBundle\Service\DataHandler
+        arguments: ['@service_container']
+        public: true
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services

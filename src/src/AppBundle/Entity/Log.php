@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Log
@@ -38,6 +39,7 @@ class Log
      * @var string
      *
      * @ORM\Column(name="created_at", type="datetime", length=100)
+     * @Assert\DateTime()
      */
     private $createdAt;
 

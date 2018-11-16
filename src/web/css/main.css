@@ -1,0 +1,14 @@
+.dtHorizontalVerticalExampleWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#dtHorizontalVerticalExample th, td {
+    white-space: nowrap;
+}
+#dtHorizontalVerticalExample_wrapper .DTFC_LeftBodyWrapper {
+    top: -12px !important;
+}
+.mytable>tbody>tr>td, .mytable>tbody>tr>th, .mytable>tfoot>tr>td, .mytable>tfoot>tr>th, .mytable>thead>tr>td, .mytable>thead>tr>th {
+    padding: 4px 10px;
+}
+

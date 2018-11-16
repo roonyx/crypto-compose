@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use LinkerBundle\Validator\Constraints as LinkerAssert;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -39,9 +38,17 @@ class Link
     private $shortUrlId;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="imp_count", type="integer")
+     */
+    private $impCount;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="created_at", type="datetime", length=100)
+     * @Assert\DateTime()
      */
     private $createdAt;
 
@@ -50,6 +57,7 @@ class Link
      * @var string
      *
      * @ORM\Column(name="updated_at", type="datetime", length=100)
+     * @Assert\DateTime()
      */
     private $updatedAt;
 
@@ -106,10 +114,61 @@ class Link
      *
      * @return Link
      */
-    public function setLastName($shortUrlId)
+    public function setShortUrlId($shortUrlId)
     {
         $this->shortUrlId = $shortUrlId;
 
         return $this;
     }
+
+    /**
+     * Get impCount.
+     *
+     * @return int
+     */
+    public function getImpCount()
+    {
+        return $this->impCount;
+    }
+
+    /**
+     * @param int $impCount
+     * @return Link
+     */
+    public function setImpCount($impCount)
+    {
+        $this->impCount = $impCount;
+
+        return $this;
+    }
+
+    /**
+     * @return Link
+     */
+    public function incrementImpCount()
+    {
+        $this->impCount++;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return Link
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
 }

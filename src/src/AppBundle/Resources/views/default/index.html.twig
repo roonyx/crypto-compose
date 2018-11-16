@@ -1,0 +1,101 @@
+{% extends 'footer.html.twig' %}
+
+{% block content %}
+
+    {#<script language="JavaScript">#}
+    {#//-----------on check change-----------#}
+    {#// $(document).ready(function() {#}
+    {#// var countChecked = function() {#}
+    {#//     console.log('countChecked', this);#}
+    {#//     var n = $("input:checked").length;#}
+    {#//     console.log(n);#}
+    {#//     // // $( "div" ).text( n + (n === 1 ? " is" : " are") + " checked!" );#}
+    {#// };#}
+    {#// countChecked();#}
+
+    {#// $("input[type=checkbox]").on("click", countChecked(this));#}
+    {#// });#}
+
+    {#//-------------------------------------#}
+    {#</script>#}
+
+    <div class="js-log-coin-rate" data-log-coin-rate="{{ logCoinRate }}">
+    </div>
+
+    <div class="masthead mb-auto">
+        <div class="container inner">
+            <h3 class="masthead-brand">CryptoCompose</h3>
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li class="active"><a href="#">Compose new</a></li>
+                    <li><a href="{{ path("about") }}">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="inner cover">
+        <h1 class="cover-heading">Compose Segment</h1>
+        <p class="lead">choose Coin and History Segment
+        </p>
+
+        <p class="lead">
+        <div class="lead">
+            <div>
+                <table class="table">
+                    <form action="{{ path("composepage") }}" method="POST" id="coins" name="coins" class="row">
+                        <div class="form-group">
+                            <div class="col-xs-4">
+                                <select class="form-control" name="querySelect" id="querySelect">
+                                    {% for coin  in coins %}
+                                        <option {% if coin.id == queryId %}selected{% endif %}
+                                                value="{{ coin.id }}">{{ coin.shortName }}
+                                            - {{ coin.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="col-xs-3 col-md-15" id="sandbox-container">
+                                <div class="input-daterange input-group" id="datepicker">
+                                    <div class="input-daterange input-group" id="datepicker">
+                                        <input type="text" class="form-control" id='datetimepicker6'
+                                               name="fromDateTime" value="{{ fromDateTime }}" autocomplete="off"/>
+                                        <span class="input-group-addon">to</span>
+                                        <input type="text" class="form-control" id='datetimepicker7'
+                                               name="toDateTime" value="{{ toDateTime }}" autocomplete="off"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-check col-xs-2">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="generateLinkFlag"
+                                           id="generateLinkFlag">
+                                    Generate Link
+                                    <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                </label>
+                            </div>
+
+
+                            <div class="col-xs-2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        </p>
+        <p class="lead">
+            <div class="lead" id="container" style="width: 1100px; height: 400px; margin: 0 auto">
+            </div>
+        </p>
+    </div>
+
+{% endblock %}
+
+

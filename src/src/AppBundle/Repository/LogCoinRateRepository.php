@@ -10,4 +10,42 @@ namespace AppBundle\Repository;
  */
 class LogCoinRateRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function checkDateRange(\DateTime $fromDateTime, \DateTime $toDateTime, $coinId)
+    {
+        $toDateTime->setTime(23, 59, 59);
+        $fromDateTime->setTime(00, 00, 00);
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('lcr')
+            ->from('AppBundle:LogCoinRate', 'lcr')
+            ->leftJoin('lcr.log', 'lcr_log')
+            ->leftJoin('lcr.coin', 'lcr_coin')
+            ->where('lcr_log.createdAt < :toDateTime')
+            ->andWhere('lcr_log.createdAt > :fromDateTime')
+            ->andWhere('lcr_coin.id = :coinId')
+            ->setParameter('toDateTime', $toDateTime)
+            ->setParameter('fromDateTime', $fromDateTime)
+            ->setParameter('coinId', $coinId)
+        ;
+
+        $result = $qb->getQuery()->getResult();
+
+        return $result;
+    }
+
+    public function getLogCoinRatesByLinkId($linkId)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('lcr')
+            ->from('AppBundle:LogCoinRate', 'lcr')
+            ->leftJoin('lcr.log', 'lcr_log')
+            ->leftJoin('lcr_log.links', 'lcr_log_links')
+            ->where('lcr_log_links.shortUrlId = :linkId')
+            ->setParameter('linkId', $linkId)
+        ;
+
+        $result = $qb->getQuery()->getResult();
+
+        return $result;
+    }
+
 }

@@ -2,19 +2,14 @@
 
 namespace AppBundle\Service;
 
-
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class MinAPI
 {
     const API_URL = 'https://min-api.cryptocompare.com/data/';
-    protected $JIRA_API;
-    protected $WS_API;
-    protected $WS_TOKEN;
     protected $client;
     protected $container;
-    protected $oauthWrapper = null;
     protected $session = null;
     protected $oauth = null;
 
@@ -28,7 +23,7 @@ class MinAPI
     protected function req($method, $endpoint)
     {
         $curl = curl_init();
-        $url = self::API_URL.$endpoint;
+        $url = self::API_URL . $endpoint;
 
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -42,23 +37,24 @@ class MinAPI
     }
 
 
-    private function getStatusInfo($statusCode, $result, $method, $url){
-        if($statusCode >= 200 && $statusCode < 300)
-        {//success
+    private function getStatusInfo($statusCode, $result, $method, $url)
+    {
+        if ($statusCode >= 200 && $statusCode < 300) {//success
             return $result;
         } else {//err
-            if(@$result->errorMessages)
-            {
-                throw new Exception(implode(",",$result->errorMessages)." url:".$url." method: ".$method);
+            if (@$result->errorMessages) {
+                throw new Exception(implode(",", $result->errorMessages) . " url:" . $url . " method: " . $method);
             }
         }
     }
 
-    public function getRates($coinsStr, $currenciesStr) {
-        return $this->req('GET', 'price?fsym='.$coinsStr.'&tsyms='.$currenciesStr);
+    public function getRates($coinsStr, $currenciesStr)
+    {
+        return $this->req('GET', 'price?fsym=' . $coinsStr . '&tsyms=' . $currenciesStr);
     }
 
-    public function getMultiRates($coinsStr, $currenciesStr) {
-        return $this->req('GET', 'pricemulti?fsyms='.$coinsStr.'&tsyms='.$currenciesStr);
+    public function getMultiRates($coinsStr, $currenciesStr)
+    {
+        return $this->req('GET', 'pricemulti?fsyms=' . $coinsStr . '&tsyms=' . $currenciesStr);
     }
 }

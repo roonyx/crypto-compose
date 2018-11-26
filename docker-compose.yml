@@ -4,27 +4,19 @@ services:
   db:
     image: mysql
     ports:
-    - "3306:3306"
-    volumes:
-    - "./.data/db:/var/lib/mysql"
+      - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: '{{ services.cryptocompose.db.root_password }}'
+      MYSQL_DATABASE: '{{ services.head_hunter.db.name }}'
+      MYSQL_USER: '{{ services.head_hunter.db.user }}'
+      MYSQL_PASSWORD: '{{ services.head_hunter.db.password }}'
   php:
-    build:
-      context: php7-fpm
-      args:
-        TIMEZONE: ${TIMEZONE}
-    volumes:
-    - ${SYMFONY_APP_PATH}:/var/www/symfony
-    - ./logs/symfony:/var/www/symfony/app/logs
+    image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}"
+  php_migrator:
+    image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}"
+    command: sh -c './wait-for db:3306 -- ./bin/console doctrine:migrations:migrate'
+
   nginx:
-    build: nginx
+    image: "${REGISTRY}/${CRYPTOCOMPOSE__NGINX_SERVICE}:${CRYPTOCOMPOSE__NGINX_SERVICE__VERSION}"
     ports:
-    - 80:80
-    volumes_from:
-    - php
-    volumes:
-    - ./logs/nginx/:/var/log/nginx
+      - 80

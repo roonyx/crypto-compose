@@ -4,9 +4,9 @@ services:
   db:
     image: mysql
     ports:
-    - "3306:3306"
+      - "3306:3306"
     volumes:
-    - "mysql:/var/lib/mysql"
+      - "mysql:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -17,19 +17,15 @@ services:
     healthcheck:
       test: 'nc -z localhost 8000 > /dev/null 2>&1 || exit 1'
     ports:
-    - 8000
+      - 8000
     networks:
-    - traefik_proxy
+      - traefik_proxy
     deploy:
       labels:
         traefik.enable: 'true'
-        traefik.backend: example
+        traefik.backend: nginx
         traefik.frontend.rule: 'Host: cc.roonyx.team'
         traefik.port: '8000'
-    volumes_from:
-    - php
-    volumes:
-    - ./logs/nginx/:/var/log/nginx
 volumes:
   mysql:
 networks:

@@ -2,4 +2,3 @@
 *.yml
 *.env
 ./logs
-./nginx

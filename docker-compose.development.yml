@@ -35,6 +35,7 @@ services:
       - net
   nginx:
     build:
+      dockerfile: nginx/Dockerfile
       context: .
     ports:
       - 80:80

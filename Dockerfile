@@ -39,7 +39,6 @@ RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
 COPY ./src /var/www/symfony
 COPY ./wait-for /var/www/symfony
+#RUN usermod -u 1000 www-data
 
 WORKDIR /var/www/symfony
-
-RUN ls -la ./bin

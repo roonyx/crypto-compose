@@ -38,6 +38,10 @@ status:
 	@echo ${BOLD}"\nContainers statuses\n" ${END_COLOR}
 	@docker-compose ps
 
+perms:
+	@docker-compose exec php bash -c "chmod -R 755 ./var/cache ./var/logs"
+	@docker-compose exec php bash -c "chown -R www-data:www-data ./var/cache ./var/logs"
+
 console-php:
 	@docker-compose exec php bash
 console-db:

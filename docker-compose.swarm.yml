@@ -9,7 +9,7 @@ services:
       - net
   nginx:
     healthcheck:
-      test: 'nc -z localhost 8000 > /dev/null 2>&1 || exit 1'
+      test: 'nc -z localhost 9000 > /dev/null 2>&1 || exit 1'
     ports:
       - 9000
     networks:

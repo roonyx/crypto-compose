@@ -20,7 +20,7 @@ services:
         traefik.enable: 'true'
         traefik.backend: nginx
         traefik.frontend.rule: 'Host: cc.roonyx.team'
-        traefik.port: 80
+        traefik.port: '80'
   php:
     networks:
       - net

@@ -9,9 +9,9 @@ services:
       - net
   nginx:
     healthcheck:
-      test: 'nc -z localhost 9000 > /dev/null 2>&1 || exit 1'
+      test: 'nc -z localhost 80 > /dev/null 2>&1 || exit 1'
     ports:
-      - 9000
+      - 80
     networks:
       - traefik_proxy
       - net
@@ -20,7 +20,7 @@ services:
         traefik.enable: 'true'
         traefik.backend: nginx
         traefik.frontend.rule: 'Host: cc.roonyx.team'
-        traefik.port: '9000'
+        traefik.port: 80
   php:
     networks:
       - net

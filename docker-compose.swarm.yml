@@ -28,6 +28,10 @@ services:
   php_migrator:
     networks:
       - net
+    deploy:
+      mode: replicated
+      restart_policy:
+        condition: none
 volumes:
   mysql:
 networks:

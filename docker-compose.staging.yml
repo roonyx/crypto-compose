@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  php:
+    image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}"
+    build:
+      context: .
+      args:
+        TIMEZONE: 'Europe/Paris'
+  nginx:
+    image: "${REGISTRY}/${CRYPTOCOMPOSE__NGINX_SERVICE}:${CRYPTOCOMPOSE__NGINX_SERVICE__VERSION}"
+    build:
+      dockerfile: nginx/Dockerfile
+      context: .

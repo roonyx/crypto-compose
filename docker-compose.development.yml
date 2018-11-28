@@ -1,0 +1,49 @@
+version: '3.2'
+
+services:
+  db:
+    image: leafney/docker-alpine-mysql
+    ports:
+      - '3306:3306'
+    volumes:
+      - "mysql:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PWD: root
+      MYSQL_USER_DB: symfony
+      MYSQL_USER: root
+      MYSQL_USER_PWD: root
+    networks:
+      - net
+  php:
+    image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}-development"
+    build:
+      dockerfile: Dockerfile.development
+      context: .
+      args:
+        TIMEZONE: 'Europe/Paris'
+    volumes:
+      - ./src:/var/www/symfony
+    networks:
+      - net
+  php_migrator:
+    image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}-development"
+    build:
+      dockerfile: Dockerfile.development
+      context: .
+      args:
+        TIMEZONE: 'Europe/Paris'
+    command: sh -c './wait-for db:3306 -- ./bin/console doctrine:migrations:migrate'
+    networks:
+      - net
+  nginx:
+    build:
+      dockerfile: nginx/Dockerfile
+      context: .
+    ports:
+      - '80:80'
+    networks:
+      - net
+volumes:
+  mysql:
+networks:
+  net:

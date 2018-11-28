@@ -1,0 +1,7 @@
+*.md
+*.yml
+*.env
+./logs
+./LICENCE
+./doc
+Dockerfile*

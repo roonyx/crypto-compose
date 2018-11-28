@@ -5,6 +5,8 @@ services:
     image: mysql
     volumes:
       - mysql:/var/lib/mysql
+    networks:
+      - net
   nginx:
     build: nginx
     healthcheck:
@@ -13,14 +15,22 @@ services:
       - 8000
     networks:
       - traefik_proxy
+      - net
     deploy:
       labels:
         traefik.enable: 'true'
         traefik.backend: nginx
         traefik.frontend.rule: 'Host: cc.roonyx.team'
         traefik.port: '8000'
+  php:
+    networks:
+      - net
+  php_migrator:
+    networks:
+      - net
 volumes:
   mysql:
 networks:
+  net:
   traefik_proxy:
     external: true

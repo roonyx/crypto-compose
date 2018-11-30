@@ -5,35 +5,24 @@ services:
     image: mysql
     volumes:
       - mysql:/var/lib/mysql
-    networks:
-      - net
   nginx:
+    build: nginx
+    depends_on:
+      - php
     healthcheck:
-      test: 'nc -z localhost 80 > /dev/null 2>&1 || exit 1'
+      test: 'nc -z localhost 8000 > /dev/null 2>&1 || exit 1'
     ports:
-      - 80
+      - 8000
     networks:
       - traefik_proxy
-      - net
     deploy:
       labels:
         traefik.enable: 'true'
         traefik.backend: nginx
         traefik.frontend.rule: 'Host: cc.roonyx.team'
-        traefik.port: '80'
-  php:
-    networks:
-      - net
-  php_migrator:
-    networks:
-      - net
-    deploy:
-      mode: replicated
-      restart_policy:
-        condition: none
+        traefik.port: '8000'
 volumes:
   mysql:
 networks:
-  net:
   traefik_proxy:
     external: true

@@ -39,6 +39,8 @@ services:
     build:
       dockerfile: nginx/Dockerfile
       context: .
+    depends_on:
+      - php
     ports:
       - '80:80'
     networks:

@@ -4,4 +4,5 @@
 ./logs
 ./LICENCE
 ./doc
+./.idea
 Dockerfile*

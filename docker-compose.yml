@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   db:
-    image: mysql
+    image: leafney/docker-alpine-mysql
     ports:
       - 3306
     environment:
@@ -12,9 +12,19 @@ services:
       MYSQL_PASSWORD: '{{ services.cryptocompose.db.password }}'
   php:
     image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}"
+    environment:
+      MYSQL_ROOT_PASSWORD: '{{ services.cryptocompose.db.root_password }}'
+      MYSQL_DATABASE: '{{ services.cryptocompose.db.name }}'
+      MYSQL_USER: '{{ services.cryptocompose.db.user }}'
+      MYSQL_PASSWORD: '{{ services.cryptocompose.db.password }}'
   php_migrator:
     image: "${REGISTRY}/${CRYPTOCOMPOSE_SERVICE}:${CRYPTOCOMPOSE_SERVICE__VERSION}"
     command: sh -c './wait-for db:3306 -- ./bin/console doctrine:migrations:migrate'
+    environment:
+      MYSQL_ROOT_PASSWORD: '{{ services.cryptocompose.db.root_password }}'
+      MYSQL_DATABASE: '{{ services.cryptocompose.db.name }}'
+      MYSQL_USER: '{{ services.cryptocompose.db.user }}'
+      MYSQL_PASSWORD: '{{ services.cryptocompose.db.password }}'
   nginx:
     image: "${REGISTRY}/${CRYPTOCOMPOSE__NGINX_SERVICE}:${CRYPTOCOMPOSE__NGINX_SERVICE__VERSION}"
     ports:

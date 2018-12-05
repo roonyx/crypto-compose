@@ -54,8 +54,6 @@ class AppGetRatesCommand extends ContainerAwareCommand
             if ($coinCount > 0) {
                 foreach ($coins as $index => $coin) {
                     $queryCoinStr .= $coin->getShortName() . (($index < $coinCount - 1) ? ',' : '');
-
-                    $coin->getShortName();
                 }
             }
             $ratesObj = $this->minApi->getMultiRates($queryCoinStr, 'USD');

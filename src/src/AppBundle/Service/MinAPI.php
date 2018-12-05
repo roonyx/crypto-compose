@@ -8,6 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class MinAPI
 {
     const API_URL = 'https://min-api.cryptocompare.com/data/';
+    const API_KEY = '5437b4a7ac5acd891f123b539b81d2fa059a268f98576a1ae63f237a1dde664e';
     protected $client;
     protected $container;
     protected $session = null;
@@ -20,10 +21,12 @@ class MinAPI
     }
 
 
-    protected function req($method, $endpoint)
+    protected function req($method, $endpoint, $toTs = null, $limit = null)
     {
+        $api_key = $this->container->getParameter('crypto_compare_api_key');
+        $api_key = (!empty($api_key) ? $api_key : self::API_KEY);
         $curl = curl_init();
-        $url = self::API_URL . $endpoint;
+        $url = self::API_URL . $endpoint . $toTs . $limit . '&api_key=' . $api_key;
 
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -56,5 +59,15 @@ class MinAPI
     public function getMultiRates($coinsStr, $currenciesStr)
     {
         return $this->req('GET', 'pricemulti?fsyms=' . $coinsStr . '&tsyms=' . $currenciesStr);
+    }
+
+    public function getHistoryDailyRates($coinStr, $currencyStr, $toTs, $limit)
+    {
+        return $this->req(
+            'GET',
+            'histoday?fsym=' . $coinStr . '&tsym=' . $currencyStr,
+            '&toTs=' . $toTs,
+            '&limit=' . $limit
+        );
     }
 }

@@ -22,9 +22,28 @@ class LogCoinRateRepository extends \Doctrine\ORM\EntityRepository
             ->where('lcr_log.createdAt < :toDateTime')
             ->andWhere('lcr_log.createdAt > :fromDateTime')
             ->andWhere('lcr_coin.id = :coinId')
+            ->orderBy('lcr_log.createdAt', 'ASC')
             ->setParameter('toDateTime', $toDateTime)
             ->setParameter('fromDateTime', $fromDateTime)
             ->setParameter('coinId', $coinId)
+        ;
+
+        $result = $qb->getQuery()->getResult();
+
+        return $result;
+    }
+
+    public function checkLogExistsByDateAndCoin(\DateTime $createdAt, $coinShortName)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('lcr')
+            ->from('AppBundle:LogCoinRate', 'lcr')
+            ->leftJoin('lcr.log', 'lcr_log')
+            ->leftJoin('lcr.coin', 'lcr_coin')
+            ->where('lcr_log.createdAt = :createdAt')
+            ->andWhere('lcr_coin.shortName = :coinId')
+            ->setParameter('createdAt', $createdAt)
+            ->setParameter('coinId', $coinShortName)
         ;
 
         $result = $qb->getQuery()->getResult();

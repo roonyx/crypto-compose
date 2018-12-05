@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    crypto_compare_api_key: '5437b4a7ac5acd891f123b539b81d2fa059a268f98576a1ae63f237a1dde664e'
 
 framework:
     #esi: ~

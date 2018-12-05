@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             rows.push(row);
             row = [];
         });
-        data.addColumn('number', coinName + ' per $');
+        data.addColumn('number', '$ per ' + coinName);
         data.addRows(rows);
 
         // Set chart options

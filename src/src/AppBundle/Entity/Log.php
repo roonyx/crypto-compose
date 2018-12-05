@@ -25,7 +25,7 @@ class Log
 
 
     /**
-     * @ORM\OneToMany(targetEntity="LogCoinRate", mappedBy="log")
+     * @ORM\OneToMany(targetEntity="LogCoinRate", mappedBy="log", orphanRemoval=true, cascade={"persist"})
      */
     private $coinsOfLog;
 

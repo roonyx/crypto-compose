@@ -59,6 +59,7 @@ class LogCoinRateRepository extends \Doctrine\ORM\EntityRepository
             ->leftJoin('lcr.log', 'lcr_log')
             ->leftJoin('lcr_log.links', 'lcr_log_links')
             ->where('lcr_log_links.shortUrlId = :linkId')
+            ->orderBy('lcr_log.createdAt', 'ASC')
             ->setParameter('linkId', $linkId)
         ;
 

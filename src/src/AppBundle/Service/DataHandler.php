@@ -106,7 +106,7 @@ class DataHandler
             $logCoinRatesArr[$logCoinRate->getLog()->getCreatedAt()->format('Y-m-d H:i:s')][] = [
                 'rate' => $logCoinRate->getRate(),
                 'coin' => $logCoinRate->getCoin()->getName(),
-                'date' => $logCoinRate->getLog()->getCreatedAt()->format('Y-m-d H:i:s')
+                'date' => $logCoinRate->getLog()->getCreatedAt()->format('Y-m-d')
             ];
         }
 

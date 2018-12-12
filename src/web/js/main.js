@@ -1,15 +1,3 @@
-// $(document).ready(function () {
-//     var countChecked = function () {
-//         var n = $("input:checked").length;
-//         if ($("input:checked").length > 0) {
-//             $("#coins").submit();
-//         }
-//     };
-//     // countChecked();
-//
-//     // $("input[type=checkbox]").on("click", countChecked);
-// });
-
 document.addEventListener("DOMContentLoaded", function (event) {
 
     $(function () {
@@ -28,18 +16,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
     });
 
-
     function drawChart() {
         var logCoinRate = $('.js-log-coin-rate').data('logCoinRate');
 
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Date');
+        data.addColumn('date', 'Date');
 
         var rows = [];
         var row = [];
         var coinName = '';
         $.each(logCoinRate, function (ind, logDate) {
-            row.push(ind);
+            row.push(new Date(ind));
             $.each(logDate, function (i, l) {
                 var rate = parseFloat($.trim(l.rate));
                 rate = Math.round(rate * 100) / 100;
@@ -56,11 +43,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var options = {
             hAxis: {
                 // title: 'Date',
-                textStyle: {color: '#FFF'}
+                textStyle: {color: '#FFF'},
+                // format: 'MM/dd/yyyy',
             },
             vAxis: {
                 // title: 'Rate',
-                textStyle: {color: '#FFF'}
+                textStyle: {color: '#FFF'},
+                format: '$#,###',
             },
             titleTextStyle: {
                 color: '#FFF'
